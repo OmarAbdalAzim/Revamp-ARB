@@ -33,4 +33,4 @@ scjssconfig.json
 .vercel
 
 # src /lib
-src/lib/temp/*
+src/lib/temp*
