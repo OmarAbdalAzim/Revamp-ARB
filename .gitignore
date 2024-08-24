@@ -33,3 +33,4 @@ scjssconfig.json
 .vercel
 
 # src /lib
+src/lib/dictionary-service-factory.ts

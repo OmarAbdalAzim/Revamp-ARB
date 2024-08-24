@@ -20,7 +20,7 @@ export class DictionaryServiceFactory {
       ? new GraphQLDictionaryService({
           siteName,
           clientFactory,
-         // rootItemId: process.env.RootItemId,
+          rootItemId: process.env.RootItemId,
           retries: (process.env.GRAPH_QL_SERVICE_RETRIES &&
             parseInt(process.env.GRAPH_QL_SERVICE_RETRIES, 10)) as number,
         })
