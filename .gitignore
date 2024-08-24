@@ -34,3 +34,5 @@ scjssconfig.json
 
 # src /lib
 src/lib/temp*
+src/temp/.gitignore
+src/temp/GraphQLIntrospectionResult.json
