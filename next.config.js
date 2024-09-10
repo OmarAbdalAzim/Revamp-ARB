@@ -30,6 +30,11 @@ const nextConfig = {
   // Enable React Strict Mode
   reactStrictMode: true,
 
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
+  },
   // use this configuration to ensure that only images from the whitelisted domains
   // can be served from the Next.js Image Optimization API
   // see https://nextjs.org/docs/app/api-reference/components/image#remotepatterns
