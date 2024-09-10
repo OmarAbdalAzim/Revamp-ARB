@@ -50,6 +50,11 @@ const nextConfig = {
         hostname: 'feaas*.blob.core.windows.net',
         port: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'sitecore104sc.dev.local',
+        port: '',
+      },
     ]
   },
 
@@ -76,6 +81,10 @@ const nextConfig = {
         source: '/sitecore/service/:path*',
         destination: `${jssConfig.sitecoreApiHost}/sitecore/service/:path*`,
       },
+      {
+        source: '/api/jss/:path*',
+        destination: `${jssConfig.sitecoreApiHost}/api/jss/:path*`
+      }
     ];
   },
 };
