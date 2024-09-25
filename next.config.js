@@ -28,7 +28,7 @@ const nextConfig = {
   },
 
   // Enable React Strict Mode
-  reactStrictMode: true,
+  reactStrictMode: false,
 
   eslint: {
     // Warning: This allows production builds to successfully complete even if
@@ -89,9 +89,14 @@ const nextConfig = {
       {
         source: '/api/jss/:path*',
         destination: `${jssConfig.sitecoreApiHost}/api/jss/:path*`
+      },
+      {
+        source: '/api/jss/:path*',
+        destination: `http://localhost:3000/api/jss/:path*`
       }
     ];
   },
+ // matcher: ["/((?!api|_next/static|_next/image|assets|favicon.ico|.*\\.png$|.*\\.jpg$|.*\\.gif$).*)" ],
 };
 
 module.exports = () => {

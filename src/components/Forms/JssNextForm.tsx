@@ -12,9 +12,10 @@ const JssNextForm = ({ fields, router }: { fields: any; router: NextRouter }) =>
       sitecoreApiHost={''}
       sitecoreApiKey={sitecoreApiKey}
       onRedirect={(url) => router.push(url)}
-    />
-    </section>
-    
+      
+      >
+    </Form>
+    </section>  
   );
 };
 

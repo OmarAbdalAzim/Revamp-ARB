@@ -32,6 +32,8 @@ const SitecorePage = ({
   const isEditing = layoutData.sitecore.context.pageEditing;
 
   return (
+    <>
+    <h1>default page  SSG</h1>
     <ComponentPropsContext value={componentProps}>
       <SitecoreContext
         componentFactory={componentBuilder.getComponentFactory({ isEditing })}
@@ -40,6 +42,7 @@ const SitecorePage = ({
         <Layout layoutData={layoutData} headLinks={headLinks} />
       </SitecoreContext>
     </ComponentPropsContext>
+    </>
   );
 };
 

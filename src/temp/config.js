@@ -10,5 +10,5 @@ config.defaultLanguage = process.env.DEFAULT_LANGUAGE || 'en';
 config.graphQLEndpoint = process.env.GRAPH_QL_ENDPOINT || 'https://sitecore104sc.dev.local/sitecore/api/graph/edge';
 config.layoutServiceConfigurationName = process.env.LAYOUT_SERVICE_CONFIGURATION_NAME || 'sxa-jss';
 config.publicUrl = process.env.PUBLIC_URL || 'http://localhost:3000';
-config.sites = process.env.SITES || '[{"name":"arbrevamp","hostName":"*","language":"en"}]';
+config.sites = process.env.SITES || '[]';
 module.exports = config;
