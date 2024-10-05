@@ -89,10 +89,6 @@ const nextConfig = {
       {
         source: '/api/jss/:path*',
         destination: `${jssConfig.sitecoreApiHost}/api/jss/:path*`
-      },
-      {
-        source: '/api/jss/:path*',
-        destination: `http://localhost:3000/api/jss/:path*`
       }
     ];
   },
