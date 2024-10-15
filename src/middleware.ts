@@ -15,7 +15,7 @@ export const config = {
    * 4. /- (Sitecore media)
    * 5. /healthz (Health check)
    * 6. all root files inside /public
+   * "/((?!api|_next/static|_next/image|assets|favicon.ico|.*\\.png$|.*\\.jpg$|.*\\.gif$).*)"
    */
-  matcher: ['/', '/((?!api/|_next/|healthz|sitecore/api/|-/|favicon.ico|sc_logo.svg).*)',
-  "/((?!api|_next/static|_next/image|assets|favicon.ico|.*\\.png$|.*\\.jpg$|.*\\.gif$).*)" ],
+  matcher: ['/', '/((?!api/|_next/|about|healthz|sitecore/api/|-/|favicon.ico|sc_logo.svg).*)'],
 };

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect } from 'react';
 import { GetServerSideProps } from 'next';
 import NotFound from 'src/NotFound';
@@ -20,6 +21,7 @@ const FormPage = ({
   headLinks,
   formFields, // Newly added prop for form fields
 }: SitecorePageProps & { formFields?: any }): JSX.Element => {
+  console.log('this is me', formFields)
   useEffect(() => {
     handleEditorFastRefresh();
   }, []);
