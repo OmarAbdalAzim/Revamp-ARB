@@ -60,6 +60,11 @@ const nextConfig = {
         hostname: 'sitecore104sc.dev.local',
         port: '',
       },
+      {
+        protocol: 'https',
+        hostname: process.env.SITECOREHOSTNAME,
+        port: '',
+      },
     ]
   },
 
