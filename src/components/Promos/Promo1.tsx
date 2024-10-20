@@ -9,8 +9,8 @@ type Promo1Props = {
 
 const Promo1 = (props: Promo1Props): JSX.Element => (
   <div className="container-full">
-    <div className='col-12'>
-        <h1 className='text-center'>
+    <div className="col-12">
+        <h1 className="text-center">
     <Text field={props.fields.heading} />
     </h1>
     </div>

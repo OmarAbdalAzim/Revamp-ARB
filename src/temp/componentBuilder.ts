@@ -18,8 +18,8 @@ import * as Promo from 'src/components/Promo';
 import * as RichText from 'src/components/RichText';
 import * as RowSplitter from 'src/components/RowSplitter';
 import * as Title from 'src/components/Title';
+import * as EmbeddedForm from 'src/components/Forms/EmbeddedForm';
 import * as Form from 'src/components/Forms/Form';
-import * as JssNextForm from 'src/components/Forms/JssNextForm';
 import * as Promo1 from 'src/components/Promos/Promo1';
 
 export const components = new Map();
@@ -36,8 +36,8 @@ components.set('Promo', Promo);
 components.set('RichText', RichText);
 components.set('RowSplitter', RowSplitter);
 components.set('Title', Title);
+components.set('EmbeddedForm', EmbeddedForm);
 components.set('Form', Form);
-components.set('JssNextForm', JssNextForm);
 components.set('Promo1', Promo1);
 
 export const componentBuilder = new ComponentBuilder({ components });
