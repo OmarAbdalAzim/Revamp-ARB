@@ -12,8 +12,6 @@ type EmbedFormProps = {
 };
 
 export const EmbeddedForm = (props: EmbedFormProps): JSX.Element => {
-  debugger;
-  console.log('em form', props);
   const itemID= props?.rendering?.fields?.formItemId.value as string;
   const formData = `
         <div class="container">
