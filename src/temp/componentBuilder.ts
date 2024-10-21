@@ -6,6 +6,7 @@
 import { ComponentBuilder } from '@sitecore-jss/sitecore-jss-nextjs';
 
 
+import * as blog from 'src/components/blog';
 import * as ColumnSplitter from 'src/components/ColumnSplitter';
 import * as Container from 'src/components/Container';
 import * as ContentBlock from 'src/components/ContentBlock';
@@ -17,6 +18,7 @@ import * as PartialDesignDynamicPlaceholder from 'src/components/PartialDesignDy
 import * as Promo from 'src/components/Promo';
 import * as RichText from 'src/components/RichText';
 import * as RowSplitter from 'src/components/RowSplitter';
+import * as search from 'src/components/search';
 import * as Title from 'src/components/Title';
 import * as EmbeddedForm from 'src/components/Forms/EmbeddedForm';
 import * as Form from 'src/components/Forms/Form';
@@ -24,6 +26,7 @@ import * as Promo1 from 'src/components/Promos/Promo1';
 
 export const components = new Map();
 
+components.set('blog', blog);
 components.set('ColumnSplitter', ColumnSplitter);
 components.set('Container', Container);
 components.set('ContentBlock', ContentBlock);
@@ -35,6 +38,7 @@ components.set('PartialDesignDynamicPlaceholder', PartialDesignDynamicPlaceholde
 components.set('Promo', Promo);
 components.set('RichText', RichText);
 components.set('RowSplitter', RowSplitter);
+components.set('search', search);
 components.set('Title', Title);
 components.set('EmbeddedForm', EmbeddedForm);
 components.set('Form', Form);
