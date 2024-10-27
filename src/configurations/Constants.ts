@@ -8,3 +8,10 @@ export enum Constants {
   GraphQLLink='https://arbrevampsc.dev.local//sitecore/api/graph/edge?sc_apikey={3594D3B4-50A3-465B-ACFC-A2DD89EBA286}'
 }
 
+export enum MediaCenterConstants {
+  MediaCenterPage = '{F17249E5-5FC8-4485-9290-E72209D6A9D7}',
+  ArticlTemplate = '{E465576E-32CA-4835-AF53-B814CA18590A}',
+  YearTagFolder='{0169F4C5-EBC1-4CD2-BDA8-7A962F1C7D51}',
+  ArticleCategoryTagsFolder='{92D2BBEF-D2C3-4EF3-89B2-177D4C7331E7}',
+  TagTemplate='{6B40E84C-8785-49FC-8A10-6BCA862FF7EA}'
+}

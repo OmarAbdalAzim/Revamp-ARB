@@ -1,6 +1,6 @@
 import { Constants, DataSource } from "src/configurations/Constants";
 
-export class BlogServiceProvider {
+export class BlogServiceProvider { 
   public async getBlogs(
     language: string,
     nextPage: string,
