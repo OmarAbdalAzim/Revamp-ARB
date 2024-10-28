@@ -6,16 +6,20 @@
 import { ComponentBuilder } from '@sitecore-jss/sitecore-jss-nextjs';
 
 
+import * as Article from 'src/components/Article';
 import * as blog from 'src/components/blog';
 import * as ColumnSplitter from 'src/components/ColumnSplitter';
 import * as Container from 'src/components/Container';
 import * as ContentBlock from 'src/components/ContentBlock';
 import * as Image from 'src/components/Image';
 import * as LinkList from 'src/components/LinkList';
+import * as MediaCenter from 'src/components/MediaCenter';
 import * as Navigation from 'src/components/Navigation';
 import * as PageContent from 'src/components/PageContent';
 import * as PartialDesignDynamicPlaceholder from 'src/components/PartialDesignDynamicPlaceholder';
+import * as PersonalInfoForm from 'src/components/PersonalInfoForm';
 import * as Promo from 'src/components/Promo';
+import * as RecomendedArticle from 'src/components/RecomendedArticle';
 import * as RichText from 'src/components/RichText';
 import * as RowSplitter from 'src/components/RowSplitter';
 import * as search from 'src/components/search';
@@ -26,16 +30,20 @@ import * as Promo1 from 'src/components/Promos/Promo1';
 
 export const components = new Map();
 
+components.set('Article', Article);
 components.set('blog', blog);
 components.set('ColumnSplitter', ColumnSplitter);
 components.set('Container', Container);
 components.set('ContentBlock', ContentBlock);
 components.set('Image', Image);
 components.set('LinkList', LinkList);
+components.set('MediaCenter', MediaCenter);
 components.set('Navigation', Navigation);
 components.set('PageContent', PageContent);
 components.set('PartialDesignDynamicPlaceholder', PartialDesignDynamicPlaceholder);
+components.set('PersonalInfoForm', PersonalInfoForm);
 components.set('Promo', Promo);
+components.set('RecomendedArticle', RecomendedArticle);
 components.set('RichText', RichText);
 components.set('RowSplitter', RowSplitter);
 components.set('search', search);
