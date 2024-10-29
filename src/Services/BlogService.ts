@@ -1,16 +1,11 @@
-import { Constants, DataSource } from "src/configurations/Constants";
+import { Constants } from 'src/configurations/Constants';
 
-export class BlogServiceProvider { 
-  public async getBlogs(
-    language: string,
-    nextPage: string,
-    term: string,
-    categoryFilter:string
-  ) {
-
-    const Catfilter = !categoryFilter || categoryFilter.trim().length === 0
-      ? ''
-      : `
+export class BlogServiceProvider {
+  public async getBlogs(language: string, nextPage: string, term: string, categoryFilter: string) {
+    const Catfilter =
+      !categoryFilter || categoryFilter.trim().length === 0
+        ? ''
+        : `
     {
       name:"category"
       value:"${categoryFilter}"
@@ -18,9 +13,10 @@ export class BlogServiceProvider {
       
     }`;
 
-    const termFilter = !term || term.trim().length === 0
-    ? ''
-    : `
+    const termFilter =
+      !term || term.trim().length === 0
+        ? ''
+        : `
    {
   OR:[
          {
@@ -36,7 +32,7 @@ export class BlogServiceProvider {
   ]    
   }`;
 
-  const query = `query blogs    {
+    const query = `query blogs    {
   search(
     where: {
       AND: [
@@ -139,24 +135,21 @@ export class BlogServiceProvider {
 }
 `;
     try {
-      const response = await fetch(
-        `${Constants.GraphQLLink}`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            query
-          })
-        }
-      );
+      const response = await fetch(`${Constants.GraphQLLink}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          query,
+        }),
+      });
       const result = await response.json();
       if (result.errors) {
         //console.log(result.errors);
         console.error('GraphQL errors:', result.errors);
       } else {
-        return result.data.search ;//as IBlog;
+        return result.data.search; //as IBlog;
       }
       return null;
     } catch (error) {
