@@ -65,7 +65,7 @@ class Offer extends Component {
       <>
         {this.state?.offers?.results?.map((res: any) => (
           <div key={res.id} style={styles.container}>
-            <span style={{backgroundColor: '#e0f7fa'}}>{res?.ExpiryDate?.value}</span>
+            <span style={{ backgroundColor: '#e0f7fa' }}>{res?.ExpiryDate?.value}</span>
             <img
               src={res?.CardImage?.src}
               alt={''}
