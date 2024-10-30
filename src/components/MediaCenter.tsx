@@ -1,34 +1,35 @@
 import React, { Component } from 'react';
 import { MediaCenterConstants } from 'src/configurations/Constants';
-import { MediaCenterProvider } from 'src/Services/MediaCenterService';
-import { TagServiceProvider } from 'src/Services/TagService';
 import styles from '../assets/custom-style';
+import { GraphQlAPI } from 'src/pages/api/graphQl/Services/GraphQlAPI';
+import MediaCenter_Query from 'src/pages/api/graphQl/MediaCenter/MediaCenterQuery';
+import Tag_Query from 'src/pages/api/graphQl/Common/TagQuery';
 
 class SearchComponent extends Component {
+  APIService: GraphQlAPI;
   constructor(props) {
     super(props);
     this.state = {
       searchTerm: '',
-      yearFilter: '', // State for the categoryFilter
+      yearFilter: '',
       catFilter: '',
       articles: [],
       yearItems: [],
       catItems: [],
     };
-    this.mediaCenterService = new MediaCenterProvider();
-    this.TagService = new TagServiceProvider();
+    this.APIService = new GraphQlAPI();
   }
 
   handleInputChange = (event) => {
     const value = event.target.value;
     this.setState({ searchTerm: value }, () => {
-      this.handleSearch(value,this.state.yearFilter,this.state.catFilter);
+      this.handleSearch(value, this.state.yearFilter, this.state.catFilter);
     });
   };
   handleYearFilterChange = (event) => {
     const value = event.target.value;
     this.setState({ yearFilter: value }, () => {
-      this.handleSearch(this.state.searchTerm, value,this.state.catFilter);
+      this.handleSearch(this.state.searchTerm, value, this.state.catFilter);
     });
   };
   handleCatFilterChange = (event) => {
@@ -82,13 +83,10 @@ class SearchComponent extends Component {
     const nextPage = ''; // Set your next page logic if necessary
 
     try {
-      const articles = await this.mediaCenterService.getArticles(
-        language,
-        nextPage,
-        term,
-        yearFilter,
-        catFilter
+      const articles = await this.APIService.getItems(
+        MediaCenter_Query(language, nextPage, term, yearFilter, catFilter)
       );
+
       if (articles) {
         this.setState({ articles });
         console.log('Articles fetched:', articles);
@@ -98,10 +96,8 @@ class SearchComponent extends Component {
     }
 
     try {
-      const yearItems = await this.TagService.getTag(
-        language,
-        MediaCenterConstants.YearTagFolder,
-        MediaCenterConstants.TagTemplate
+      const yearItems = await this.APIService.getItems(
+        Tag_Query(language, MediaCenterConstants.YearTagFolder)
       );
       if (yearItems) {
         this.setState({ yearItems });
@@ -112,10 +108,8 @@ class SearchComponent extends Component {
     }
 
     try {
-      const catItems = await this.TagService.getTag(
-        language,
-        MediaCenterConstants.ArticleCategoryTagsFolder,
-        MediaCenterConstants.TagTemplate
+      const catItems = await this.APIService.getItems(
+        Tag_Query(language, MediaCenterConstants.ArticleCategoryTagsFolder)
       );
       if (catItems) {
         this.setState({ catItems });

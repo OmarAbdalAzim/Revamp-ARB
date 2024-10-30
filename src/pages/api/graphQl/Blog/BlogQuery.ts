@@ -1,38 +1,11 @@
 import { Constants } from 'src/configurations/Constants';
 
-export class BlogServiceProvider {
-  public async getBlogs(language: string, nextPage: string, term: string, categoryFilter: string) {
-    const Catfilter =
-      !categoryFilter || categoryFilter.trim().length === 0
-        ? ''
-        : `
-    {
-      name:"category"
-      value:"${categoryFilter}"
-      operator:EQ
-      
-    }`;
-
-    const termFilter =
-      !term || term.trim().length === 0
-        ? ''
-        : `
-   {
-  OR:[
-         {
-            name: "title"
-            value: "${term}"
-            operator: CONTAINS
-        }
-                  {
-            name: "content"
-            value: "${term}"
-            operator: CONTAINS
-        }
-  ]    
-  }`;
-
-    const query = `query blogs    {
+export const Blog_Query = (
+  language: string,
+  nextPage: string,
+  term: string,
+  categoryFilter: string
+) => `query blogs    {
   search(
     where: {
       AND: [
@@ -42,8 +15,36 @@ export class BlogServiceProvider {
              value: "${Constants.BlogFolder}"
              operator: CONTAINS
         }
-        ${termFilter}
-        ${Catfilter}
+        ${
+          !term || term.trim().length === 0
+            ? ''
+            : `
+     {
+    OR:[
+           {
+              name: "title"
+              value: "${term}"
+              operator: CONTAINS
+          }
+                    {
+              name: "content"
+              value: "${term}"
+              operator: CONTAINS
+          }
+    ]    
+    }`
+        }
+        ${
+          !categoryFilter || categoryFilter.trim().length === 0
+            ? ''
+            : `
+      {
+        name:"category"
+        value:"${categoryFilter}"
+        operator:EQ
+        
+      }`
+        }
         {
           OR: [
             {
@@ -134,27 +135,5 @@ export class BlogServiceProvider {
   }
 }
 `;
-    try {
-      const response = await fetch(`${Constants.GraphQLLink}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          query,
-        }),
-      });
-      const result = await response.json();
-      if (result.errors) {
-        //console.log(result.errors);
-        console.error('GraphQL errors:', result.errors);
-      } else {
-        return result.data.search; //as IBlog;
-      }
-      return null;
-    } catch (error) {
-      console.error('Fetch error:', error);
-      return null;
-    }
-  }
-}
+
+export default Blog_Query;

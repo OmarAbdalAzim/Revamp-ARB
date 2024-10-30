@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
-import { OfferCategoryProvider } from 'src/Services/OfferCategoryService';
 import styles from '../assets/custom-style';
 import Offer from './Offer';
 import { CommponentSettings } from 'src/configurations/Constants';
+import { GraphQlAPI } from 'src/pages/api/graphQl/Services/GraphQlAPI';
+import Offers_Category_Query from 'src/pages/api/graphQl/Offer/OfferCategoryQuery';
 
 class OthersOfferCategory extends Component {
+  APIService: any;
   constructor(props: any) {
     super(props);
     this.state = {
       offerCategory: null,
     };
-    this.OfferCategoryService = new OfferCategoryProvider();
+    //this.OfferCategoryService = new OfferCategoryProvider();
+    this.APIService = new GraphQlAPI();
   }
 
   componentDidMount() {
@@ -20,10 +23,12 @@ class OthersOfferCategory extends Component {
   handleSearch = async () => {
     const language = 'en';
     try {
-      const offerCategory = await this.OfferCategoryService.getOfferCategory(
-        language,
-        CommponentSettings.SuggestedOfferCategoryItemSkip3,
-        CommponentSettings.OtherOfferCategoryPageSize
+      const offerCategory = await this.APIService.getItems(
+        Offers_Category_Query(
+          language,
+          CommponentSettings.SuggestedOfferCategoryItemSkip3,
+          CommponentSettings.OtherOfferCategoryPageSize
+        )
       );
       if (offerCategory) {
         this.setState({ offerCategory });
@@ -37,7 +42,8 @@ class OthersOfferCategory extends Component {
   render() {
     return (
       <div style={styles.container}>
-        <h1>Other Offers</h1><br />
+        <h1>Other Offers</h1>
+        <br />
         {this.state?.offerCategory?.results?.map((res) => (
           <div
             key={res.id}

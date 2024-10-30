@@ -18,9 +18,16 @@ export enum MediaCenterConstants {
 }
 export enum OfferConstants {
   OfferTemplate = '{8CCC36A1-440D-44E2-AD6B-3C541F5E6A89}',
+  OfferCategoryTemplate = '{2B81F8CD-A721-4AC6-B382-A1928CB6B70F}',
+  OfferCategoryPath = '{4A0FA8DB-0A62-4884-9C4F-D57A403D7C96}',
 }
 export enum CommponentSettings {
   SuggestedOfferCategoryItemSkip3 = 'Mw==',
   OtherOfferCategoryPageSize = '20',
   SuggestedOfferCategoryPageSize = '3',
+}
+export enum TagConstants {
+  YearTagFolder = '{37CE3BDE-5A28-4F05-9B82-92EA387E5B9A}',
+  ArticleCategoryTagsFolder = '{4A1FB8EA-D969-4368-85AE-193833923E63}',
+  TagTemplate = '{6B40E84C-8785-49FC-8A10-6BCA862FF7EA}',
 }

@@ -1,18 +1,19 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { BlogServiceProvider } from 'src/Services/BlogService';
+import { GraphQlAPI } from 'src/pages/api/graphQl/Services/GraphQlAPI';
+import Blog_Query from 'src/pages/api/graphQl/Blog/BlogQuery';
 
 const blog = () => {
-  const blogServiceProvider = useMemo(() => new BlogServiceProvider(), []);
+  const graphQlAPI = useMemo(() => new GraphQlAPI(), []);
   const [blogs, setBlogList] = useState<unknown>();
   useEffect(() => {
     const getBlog = async () => {
       try {
-        const blogList = await blogServiceProvider.getBlogs('en', '', '', '');
+        const blogList = await graphQlAPI.getItems(Blog_Query('en', '', '', ''));
         setBlogList(blogList);
       } catch (error) {}
     };
     getBlog();
-  }, [blogServiceProvider]); // Empty dependency array ensures useEffect runs only once on mount
+  }, [graphQlAPI]); // Empty dependency array ensures useEffect runs only once on mount
 
   const divStyle: React.CSSProperties = {
     width: '300px', // Set width here
@@ -22,7 +23,7 @@ const blog = () => {
   return (
     <>
       <div>
-        {blogs?.results?.map((res:  any) => (
+        {blogs?.results?.map((res: any) => (
           <>
             <div className={`component promo`} style={divStyle}>
               <div className="component-content">

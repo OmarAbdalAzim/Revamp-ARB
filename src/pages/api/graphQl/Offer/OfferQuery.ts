@@ -1,8 +1,6 @@
-import { Constants, OfferConstants } from 'src/configurations/Constants';
+import { OfferConstants } from 'src/configurations/Constants';
 
-export class OfferProvider {
-  public async getOffer(parentId: string, language: string, nextPage: string) {
-    const query = `query offer {
+export const ALL_Offers = (parentId: string, language: string) => `query offer {
   search(
     where: {
       AND: [
@@ -56,27 +54,5 @@ export class OfferProvider {
   }
 }
 `;
-    try {
-      const response = await fetch(`${Constants.GraphQLLink}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          query,
-        }),
-      });
-      const result = await response.json();
-      if (result.errors) {
-        //console.log(result.errors);
-        console.error('GraphQL errors:', result.errors);
-      } else {
-        return result.data.search;
-      }
-      return null;
-    } catch (error) {
-      console.error('Fetch error:', error);
-      return null;
-    }
-  }
-}
+
+export default ALL_Offers;

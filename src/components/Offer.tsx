@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
-import { OfferProvider } from 'src/Services/OfferService';
-
+import { GraphQlAPI } from 'src/pages/api/graphQl/Services/GraphQlAPI';
+import ALL_Offers from 'src/pages/api/graphQl/Offer/OfferQuery';
 class Offer extends Component {
+  APIService: GraphQlAPI;
   constructor(props) {
     super(props);
     this.state = {
       articles: [],
       offers: null,
     };
-    this.OfferService = new OfferProvider();
+    this.APIService = new GraphQlAPI();
   }
   handleSearch = async () => {
     const { id } = this.props;
     const language = 'en';
     debugger;
     try {
-      const offers = await this.OfferService.getOffer(id, language);
+      const offers = await this.APIService.getItems(ALL_Offers(id, language));
       debugger;
       if (offers) {
         this.setState({ offers });

@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import { BlogServiceProvider } from 'src/Services/BlogService';
-import { CategoryServiceProvider } from 'src/Services/CategoryService';
+import { GraphQlAPI } from 'src/pages/api/graphQl/Services/GraphQlAPI';
+import Blog_Query from 'src/pages/api/graphQl/Blog/BlogQuery';
+import Category_Query from 'src/pages/api/graphQl/Common/CategoryQuery';
 
 class SearchComponent extends Component {
+  graphQlAPI: GraphQlAPI;
   constructor(props) {
     super(props);
     this.state = {
       searchTerm: '',
-      categoryFilter: '', // State for the categoryFilter
+      categoryFilter: '',
       blogs: [],
       categories: [],
     };
-    this.blogService = new BlogServiceProvider();
-    this.CategoryService = new CategoryServiceProvider();
+    this.graphQlAPI = new GraphQlAPI();
   }
 
   handleInputChange = (event) => {
@@ -37,22 +38,21 @@ class SearchComponent extends Component {
       this.setState({ searchTerm: query });
     }
     if (catFilter) {
-      this.setState({ categoryFilter :catFilter});
+      this.setState({ categoryFilter: catFilter });
     }
-    this.handleSearch(query,catFilter);
+    this.handleSearch(query, catFilter);
   }
 
   handleSearch = async (term, categoryFilter) => {
     console.log('Searching for:', term, 'with categoryFilter:', categoryFilter);
 
     // Update the URL with the search term
-    const url = new URL(window.location);
+    const url = new URL(window.location.toString());
     if (term) {
       url.searchParams.set('query', term);
     } else {
       url.searchParams.delete('query'); // Remove the categoryFilter if not selected
     }
-
 
     if (categoryFilter) {
       url.searchParams.set('categoryFilter', categoryFilter);
@@ -65,7 +65,9 @@ class SearchComponent extends Component {
     const nextPage = ''; // Set your next page logic if necessary
 
     try {
-      const blogs = await this.blogService.getBlogs(language, nextPage, term,categoryFilter);
+      const blogs = await this.graphQlAPI.getItems(
+        Blog_Query(language, nextPage, term, categoryFilter)
+      );
       if (blogs) {
         this.setState({ blogs });
         console.log('Blogs fetched:', blogs);
@@ -75,7 +77,7 @@ class SearchComponent extends Component {
     }
 
     try {
-      const categories = await this.CategoryService.getCategories(language);
+      const categories = await this.graphQlAPI.getItems(Category_Query(language));
       if (categories) {
         this.setState({ categories });
         console.log('categories fetched:', categories);
@@ -86,10 +88,6 @@ class SearchComponent extends Component {
   };
 
   render() {
-    const divStyle: React.CSSProperties = {
-      width: '300px', // Set width here
-      height: '300px', // Set height here
-    };
 
     const gridStyle: React.CSSProperties = {
       display: 'grid',
@@ -118,22 +116,22 @@ class SearchComponent extends Component {
           <select value={this.state.categoryFilter} onChange={this.handlecategoryFilterChange}>
             <option value="">Select a categoryFilter</option>
             {this.state?.categories?.results?.map((res) => (
-              <option value={res.name}>{res.title.value}</option>
+              <option key={res.title.value} value={res.name}>{res?.title?.value}</option>
             ))}
           </select>
 
           <div style={gridStyle}>
             {this.state?.blogs?.results?.map((res) => (
-              <div key={res.id} style={cardStyle}>
+              <div key={res?.id} style={cardStyle}>
                 <img
                   src={res?.image?.src}
                   alt={'' || ''}
                   style={{ width: '100%', height: 'auto', borderRadius: '5px' }}
                 />
                 <h3>
-                  <a href="#!">{res.title.value}</a>
+                  <a href="#!">{res?.title?.value}</a>
                 </h3>
-                <p>{res.content.value}</p>
+                <p>{res?.content?.value}</p>
               </div>
             ))}
           </div>

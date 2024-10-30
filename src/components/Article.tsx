@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import { Text, RichText, NextImage as JssImage } from '@sitecore-jss/sitecore-jss-nextjs';
-import styles from '../assets/custom-style'; // Adjust the path if needed
+import styles from '../assets/custom-style';
 
 const Article = (props: any) => {
   let url;

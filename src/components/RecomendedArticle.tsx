@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { MediaCenterProvider } from 'src/Services/MediaCenterService';
+import { GraphQlAPI } from 'src/pages/api/graphQl/Services/GraphQlAPI';
+import MediaCenter_Query from 'src/pages/api/graphQl/MediaCenter/MediaCenterQuery';
 
 class RecomendedArticle extends Component {
+  APIService: GraphQlAPI;
   constructor(props) {
     super(props);
     this.state = {
-      articles: []
+      articles: [],
     };
-    this.mediaCenterService = new MediaCenterProvider();
+    this.APIService = new GraphQlAPI();
   }
 
   componentDidMount() {
@@ -19,7 +21,9 @@ class RecomendedArticle extends Component {
     const nextPage = ''; // Set your next page logic if necessary
 
     try {
-      const articles = await this.mediaCenterService.getArticles(language, nextPage, '', '', '');
+      const articles = await this.APIService.getItems(
+        MediaCenter_Query(language, nextPage, '', '', '')
+      );
       if (articles) {
         this.setState({ articles });
         console.log('Articles fetched:', articles);
@@ -34,7 +38,7 @@ class RecomendedArticle extends Component {
     let itemId;
     // Check if `window` is defined before using it
     if (typeof window !== 'undefined') {
-      url = new URL(window.location);
+      url = new URL(window.location.toString());
       itemId = url.searchParams.get('id'); // Get the item ID from the URL
       window.history.pushState({}, '', url);
     }
