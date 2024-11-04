@@ -36,3 +36,5 @@ scjssconfig.json
 src/lib/temp*
 src/temp/.gitignore
 src/temp/GraphQLIntrospectionResult.json
+src/temp*
+package-lock.json
