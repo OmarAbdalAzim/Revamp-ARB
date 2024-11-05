@@ -40,3 +40,6 @@ src/temp*
 package-lock.json
 package-lock.json
 package-lock.json
+.env.local
+/.vs
+/.vscode
