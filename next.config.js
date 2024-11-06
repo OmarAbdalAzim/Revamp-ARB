@@ -57,7 +57,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'sitecore104sc.dev.local',
+        hostname: 's104scsc.dev.local',
         port: '',
       },
       {

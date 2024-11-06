@@ -7,7 +7,7 @@ export enum Constants {
   BlogItem = '{1ADAAD2B-4BB6-452E-AB70-CAFC06E14FD8}',
   CategoryTemplate = '{47B79422-9BC9-4B8E-BE1C-93F45C445DCF}',
   CategoryFolderData = '{380B4018-6785-4622-8BA2-9BBF228CF2AF}',
-  GraphQLLink = 'https://arbrevampsc.dev.local//sitecore/api/graph/edge?sc_apikey={3594D3B4-50A3-465B-ACFC-A2DD89EBA286}',
+  GraphQLLink = 'https://s104scsc.dev.local//sitecore/api/graph/edge?sc_apikey={3594D3B4-50A3-465B-ACFC-A2DD89EBA286}',
 }
 export enum MediaCenterConstants {
   MediaCenterPage = '{F17249E5-5FC8-4485-9290-E72209D6A9D7}',
