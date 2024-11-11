@@ -3,8 +3,15 @@ import typography from '@tailwindcss/typography';
 import daisyui from 'daisyui';
 
 module.exports = {
-  prefix: 'arb-',
-  content: ['./app/**/*.{js,ts,jsx,tsx,mdx}', './components/**/*.{js,ts,jsx,tsx,mdx}'],
+  // prefix: 'arb-',
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{html,js,ts,jsx,tsx}",
+  ],
   theme: {
     fontSize: {
       xs: '0.75rem',

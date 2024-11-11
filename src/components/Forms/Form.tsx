@@ -9,9 +9,8 @@ return(
       form={fields}
       sitecoreApiHost={''}
       sitecoreApiKey={sitecoreApiKey}
-      onRedirect={(url)=> router.push(url)}>
-           
-      </Form>
+      onRedirect={(url)=> router.push(url)}
+      />
 )
 };
 export default withRouter(JssNextForm);

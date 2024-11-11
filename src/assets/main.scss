@@ -1,4 +1,7 @@
+@import "~tailwindcss/base";
+@import "~tailwindcss/components";
+@import "~tailwindcss/utilities";
+
 @import "basic/fonts";
-@import "bootstrap/scss/bootstrap";
 @import "sass/main.scss";
 @import "basic/main.scss";
