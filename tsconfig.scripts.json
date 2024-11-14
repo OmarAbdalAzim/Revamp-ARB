@@ -6,6 +6,9 @@
 		]
 	},
 	"compilerOptions": {
-		"module": "commonjs"
-	}
+		"module": "commonjs",
+		"strict": true,
+    "esModuleInterop": true,
+	},
+	"include": ["types/**/*.d.ts", "src/**/*"]
 }

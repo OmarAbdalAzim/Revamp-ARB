@@ -33,15 +33,15 @@ const SitecorePage = ({
 
   return (
     <>
-    <h1>SSG Page </h1>
-    <ComponentPropsContext value={componentProps}>
-      <SitecoreContext
-        componentFactory={componentBuilder.getComponentFactory({ isEditing })}
-        layoutData={layoutData}
-      >
-        <Layout layoutData={layoutData} headLinks={headLinks} />
-      </SitecoreContext>
-    </ComponentPropsContext>
+      <h1>SSG Page </h1>
+      <ComponentPropsContext value={componentProps}>
+        <SitecoreContext
+          componentFactory={componentBuilder.getComponentFactory({ isEditing })}
+          layoutData={layoutData}
+        >
+          <Layout layoutData={layoutData} headLinks={headLinks} />
+        </SitecoreContext>
+      </ComponentPropsContext>
     </>
   );
 };
@@ -56,8 +56,8 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
   // Alternatively, the entire sitemap could be pre-rendered
   // ahead of time (non-development mode in this example).
   // See https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration
-  
-  console.log('ssg page context', context)
+
+  console.log('ssg page context', context);
   let paths: StaticPath[] = [];
   let fallback: boolean | 'blocking' = 'blocking';
 
@@ -84,7 +84,7 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
 // revalidation (or fallback) is enabled and a new request comes in.
 export const getStaticProps: GetStaticProps = async (context) => {
   const props = await sitecorePagePropsFactory.create(context);
-  
+
   return {
     props,
     // Next.js will attempt to re-generate the page:
@@ -96,4 +96,3 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export default SitecorePage;
-

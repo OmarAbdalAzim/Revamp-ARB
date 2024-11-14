@@ -3,16 +3,16 @@ import { sitecoreApiHost, sitecoreApiKey } from 'temp/config';
 
 type EmbedFormProps = {
   [key: string]: {
+    [key: string]: {
       [key: string]: {
-          [key: string]: {
-              [key: string]: string;
-          };
+        [key: string]: string;
       };
+    };
   };
 };
 
 export const EmbeddedForm = (props: EmbedFormProps): JSX.Element => {
-  const itemID= props?.rendering?.fields?.formItemId.value as string;
+  const itemID = props?.rendering?.fields?.formItemId.value as string;
   const formData = `
         <div class="container">
           <scef-form formid="${itemID}"></scef-form>
@@ -22,6 +22,6 @@ export const EmbeddedForm = (props: EmbedFormProps): JSX.Element => {
         </script>
       `;
   return <div dangerouslySetInnerHTML={{ __html: formData }} />;
-}
+};
 
 export default EmbeddedForm;
