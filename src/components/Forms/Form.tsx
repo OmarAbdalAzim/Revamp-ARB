@@ -12,6 +12,8 @@ import {
   MATCH_TYPE_CONTAINS,
   OPERATOR_CONSTANTS,
 } from './constants';
+import FormRenderer from 'components/NextForm/FormRender';
+import { condition, elements } from 'components/NextForm/types';
 
 // Redux action (for updating form data)
 const updateForm = (data: any) => ({ type: UPDATE_FORM, payload: data });
@@ -254,12 +256,16 @@ const JssNextForm = ({ fields, router }: any) => {
   }, [fieldValues, conditions]);
   console.log('props for field values', fields);
   return (
-    <Form
-      form={fields}
-      sitecoreApiHost={''}
-      sitecoreApiKey={sitecoreApiKey}
-      onRedirect={(url) => router.push(url)}
-    />
+    // <Form
+    //   form={fields}
+    //   sitecoreApiHost={''}
+    //   sitecoreApiKey={sitecoreApiKey}
+    //   onRedirect={(url) => router.push(url)}
+    // />
+    <div>
+      <h1>Dynamic Form Renderer</h1>
+      <FormRenderer elements={elements} condition={condition} />
+    </div>
   );
 };
 
