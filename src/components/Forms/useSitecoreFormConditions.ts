@@ -42,7 +42,7 @@ const useSitecoreFormConditions = (fields: any, functionConditions: any[]) => {
   // Apply conditions and actions
   const applyConditions = (formElement: HTMLElement) => {
     functionConditions.forEach((condition) => {
-      console.log('-------------', condition);
+      console.log('condition-------------', condition);
       const ConditionItem = formElement.querySelector<HTMLInputElement>(`#${condition.key}`);
       const val = condition.actions[0]?.fieldId;
       console.log(val);
@@ -51,12 +51,14 @@ const useSitecoreFormConditions = (fields: any, functionConditions: any[]) => {
       );
       console.log(ConditionItem, changingCondition);
       if (ConditionItem && changingCondition) {
+        console.log('Arraaaaaaaaaaaaaaaaaay', condition.conditions[0].value);
         const handleCondition = () => {
           const isConditionTrue = Boolean(condition.conditions[0].value);
+          console.log('first checker for checkbox initial code render', isConditionTrue);
           console.log(condition);
           const variable =
             condition.conditions[0].operator === 'IS_EQUAL_TO'
-              ? ConditionItem.checked === isConditionTrue
+              ? ConditionItem.checked === true
               : ConditionItem.checked !== isConditionTrue;
           console.log('flagvalue', variable);
           // Example usage
@@ -65,6 +67,7 @@ const useSitecoreFormConditions = (fields: any, functionConditions: any[]) => {
             console.log('Condition met, perform the action:', condition.actions[0].actionType);
             console.log(condition.actions[0]);
             const actionType = condition.actions[0]?.actionType;
+            // const actionType = "DISABLE";
             console.log('-----/////////', actionType);
             switch (actionType) {
               case 'HIDE':
@@ -86,30 +89,6 @@ const useSitecoreFormConditions = (fields: any, functionConditions: any[]) => {
             changingCondition.style.display = '';
             changingCondition.removeAttribute('disabled');
           }
-          //   if (ConditionItem.checked === isConditionTrue && condition.actions[0]?.actionType) {
-          //     console.log(condition.actions[0]);
-          //     const actionType = condition.actions[0]?.actionType;
-          //     console.log('-----/////////', actionType);
-          //     switch (actionType) {
-          //       case 'HIDE':
-          //         changingCondition.style.display = 'none';
-          //         break;
-          //       case 'SHOW':
-          //         changingCondition.style.display = '';
-          //         break;
-          //       case 'DISABLE':
-          //         changingCondition.setAttribute('disabled', 'true');
-          //         break;
-          //       case 'ENABLE':
-          //         changingCondition.removeAttribute('disabled');
-          //         break;
-          //       default:
-          //         console.warn(`Unknown actionType: ${actionType}`);
-          //     }
-          //   } else {
-          //     changingCondition.style.display = '';
-          //     changingCondition.removeAttribute('disabled');
-          //   }
         };
 
         ConditionItem.addEventListener('change', handleCondition);
