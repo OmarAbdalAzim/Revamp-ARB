@@ -1,0 +1,742 @@
+{
+  "props": {
+    "pageProps": {
+      "site": { "name": "arbrevamp", "language": "en", "hostName": "*" },
+      "locale": "en",
+      "layoutData": {
+        "sitecore": {
+          "context": {
+            "visitorIdentificationTimestamp": 638675138092712300,
+            "pageEditing": false,
+            "site": { "name": "arbrevamp" },
+            "pageState": "normal",
+            "language": "en",
+            "itemPath": "/about/Forms/form1"
+          },
+          "route": {
+            "name": "form1",
+            "displayName": "form1",
+            "fields": {
+              "Content": { "value": "" },
+              "Title": { "value": "form1" },
+              "NavigationClass": null,
+              "NavigationTitle": { "value": "form1" },
+              "NavigationFilter": [],
+              "SxaTags": [],
+              "Page Design": null
+            },
+            "databaseName": "master",
+            "deviceId": "fe5d7fdf-89c0-4d99-9aa3-b5fbd009c9f3",
+            "itemId": "bbaa4c63-231b-4cd3-92a9-71ef6ab66ff4",
+            "itemLanguage": "en",
+            "itemVersion": 1,
+            "layoutId": "96e5f4ba-a2cf-4a4c-a4e7-64da88226362",
+            "templateId": "5acc18d5-c013-42da-9b1f-874a49c9e1ac",
+            "templateName": "Page",
+            "placeholders": {
+              "headless-header": [
+                {
+                  "uid": "88976434-674a-41d5-8b31-6a782b34c633",
+                  "componentName": "PartialDesignDynamicPlaceholder",
+                  "dataSource": "",
+                  "params": {
+                    "sid": "{58CE78F3-9D5C-4D3C-AEF4-3EE70BA195B2}",
+                    "ph": "headless-header",
+                    "sig": "sxa-header"
+                  },
+                  "placeholders": {
+                    "sxa-header": [
+                      {
+                        "uid": "86958d55-6c3d-4ccf-aef5-9e689296ecb2",
+                        "componentName": "Container",
+                        "dataSource": "",
+                        "params": {
+                          "Styles": "container-fluid",
+                          "DynamicPlaceholderId": "1",
+                          "FieldNames": "Default"
+                        },
+                        "placeholders": {
+                          "container-1": [
+                            {
+                              "uid": "3b9d5dd5-9ce0-4bc2-8353-48ee876ed4c2",
+                              "componentName": "Container",
+                              "dataSource": "",
+                              "params": {
+                                "Styles": "col-6",
+                                "CacheClearingBehavior": "Clear on publish",
+                                "DynamicPlaceholderId": "2",
+                                "FieldNames": "Default"
+                              },
+                              "placeholders": {
+                                "container-2": [
+                                  {
+                                    "uid": "1792c6c0-bdb3-4438-92e8-f4d9bc4a3b09",
+                                    "componentName": "RichText",
+                                    "dataSource": "/sitecore/content/AlRajhi/ARBRevamp/Presentation/Partial Designs/Header/Data/Title",
+                                    "params": {
+                                      "FieldNames": "Default",
+                                      "Styles": "bs-title",
+                                      "DynamicPlaceholderId": "3"
+                                    },
+                                    "fields": {
+                                      "Text": { "value": "\u003ch1\u003eSkate Park\u003c/h1\u003e" }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "uid": "067554a6-89a8-472c-847e-da9ad96a6f19",
+                              "componentName": "Container",
+                              "dataSource": "",
+                              "params": {
+                                "Styles": "col-6",
+                                "CacheClearingBehavior": "Clear on publish",
+                                "DynamicPlaceholderId": "4",
+                                "FieldNames": "Default"
+                              },
+                              "placeholders": {
+                                "container-4": [
+                                  {
+                                    "uid": "a1e1195f-6cac-4d26-9466-bb50dc48d92b",
+                                    "componentName": "Navigation",
+                                    "dataSource": "",
+                                    "params": {
+                                      "FieldNames": "Default",
+                                      "Styles": "navigation-horizontal",
+                                      "NavigationRoot": "{37351393-0E8C-4E85-8016-6EDDB0CC546A}",
+                                      "LevelFrom": "{1BB88840-5FB3-4353-AD8D-81136F6FF75A}",
+                                      "AddRoot": "1"
+                                    },
+                                    "fields": [
+                                      {
+                                        "Id": "37351393-0e8c-4e85-8016-6eddb0cc546a",
+                                        "Styles": [
+                                          "level0",
+                                          "submenu",
+                                          "item0",
+                                          "odd",
+                                          "first",
+                                          "last"
+                                        ],
+                                        "Href": "/",
+                                        "Querystring": "",
+                                        "NavigationTitle": { "value": "Home", "editable": "Home" },
+                                        "Children": [
+                                          {
+                                            "Id": "ad307c93-d7cc-4fbc-9c35-a5d490ba284a",
+                                            "Styles": ["level1", "item0", "odd", "first"],
+                                            "Href": "/about",
+                                            "Querystring": "",
+                                            "NavigationTitle": {
+                                              "value": "About",
+                                              "editable": "About"
+                                            }
+                                          },
+                                          {
+                                            "Id": "a847ff94-4e73-4c12-a93b-dd421a6ac33e",
+                                            "Styles": ["level1", "item1", "even"],
+                                            "Href": "/Blogs",
+                                            "Querystring": "",
+                                            "NavigationTitle": {
+                                              "value": "Blogs",
+                                              "editable": "Blogs"
+                                            }
+                                          },
+                                          {
+                                            "Id": "fd3bb292-79cc-4607-ade1-a68af340104d",
+                                            "Styles": ["level1", "item2", "odd"],
+                                            "Href": "/Embedform",
+                                            "Querystring": "",
+                                            "NavigationTitle": {
+                                              "value": "Embed Form",
+                                              "editable": "Embed Form"
+                                            }
+                                          },
+                                          {
+                                            "Id": "cc232166-4d17-4ab7-9330-426a82c6db18",
+                                            "Styles": ["level1", "item3", "even"],
+                                            "Href": "/livedata",
+                                            "Querystring": "",
+                                            "NavigationTitle": {
+                                              "value": "livedata",
+                                              "editable": "livedata"
+                                            }
+                                          },
+                                          {
+                                            "Id": "f17249e5-5fc8-4485-9290-e72209d6a9d7",
+                                            "Styles": ["level1", "item4", "odd"],
+                                            "Href": "/MediaCenter",
+                                            "Querystring": "",
+                                            "NavigationTitle": {
+                                              "value": "Media Center",
+                                              "editable": "Media Center"
+                                            }
+                                          },
+                                          {
+                                            "Id": "079c9644-cce8-4a3a-89cb-6a5bdaa653e2",
+                                            "Styles": ["level1", "item5", "even"],
+                                            "Href": "/Offers",
+                                            "Querystring": "",
+                                            "NavigationTitle": {
+                                              "value": "Offers",
+                                              "editable": "Offers"
+                                            }
+                                          },
+                                          {
+                                            "Id": "ea82516e-4811-4778-8920-a52ea0efd12a",
+                                            "Styles": ["level1", "item6", "odd", "last"],
+                                            "Href": "/Search",
+                                            "Querystring": "",
+                                            "NavigationTitle": {
+                                              "value": "Search",
+                                              "editable": "Search"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "headless-main": [
+                {
+                  "uid": "742265fe-6164-45bb-8b21-20483f7b7676",
+                  "componentName": "Form",
+                  "dataSource": "{82F8C68A-865A-488A-B33A-C39BE0F7F7AA}",
+                  "params": { "GridParameters": "col-12", "FieldNames": "Default" },
+                  "fields": {
+                    "htmlPrefix": "fxb.742265fe-6164-45bb-8b21-20483f7b7676",
+                    "formSessionId": {
+                      "name": "fxb.742265fe-6164-45bb-8b21-20483f7b7676.FormSessionId",
+                      "id": "fxb_742265fe-6164-45bb-8b21-20483f7b7676_FormSessionId",
+                      "value": "53d1406d-b992-48b1-afba-235e2a0acb12"
+                    },
+                    "formItemId": {
+                      "name": "fxb.742265fe-6164-45bb-8b21-20483f7b7676.FormItemId",
+                      "id": "fxb_742265fe-6164-45bb-8b21-20483f7b7676_FormItemId",
+                      "value": "{82F8C68A-865A-488A-B33A-C39BE0F7F7AA}"
+                    },
+                    "pageItemId": {
+                      "name": "fxb.742265fe-6164-45bb-8b21-20483f7b7676.PageItemId",
+                      "id": "fxb_742265fe-6164-45bb-8b21-20483f7b7676_PageItemId",
+                      "value": "d8e36a04-5f45-4f31-97a0-7eae2b5d5ba0"
+                    },
+                    "antiForgeryToken": {
+                      "name": "__RequestVerificationToken",
+                      "id": null,
+                      "value": "uhoRaVFDXvNqeE6dtKWG6Z2V-7PihwDH8HCmJhkt4J8dWLgl39oHRMmquJo1zpfbLK7T34rx-GEthAdvhVz2BXsSwkr6om55yngS7jR8oy01"
+                    },
+                    "metadata": {
+                      "isAjax": true,
+                      "isTrackingEnabled": true,
+                      "isRobotDetectionAvailable": true,
+                      "isRobotDetectionEnabled": false,
+                      "isTemplate": false,
+                      "title": "",
+                      "cssClass": "",
+                      "cssClassSettings": {
+                        "manualCssClasses": "",
+                        "cssClassOptions": [],
+                        "cssClass": ""
+                      },
+                      "thumbnail": "{6590E671-6D5E-449C-A85D-9D4BA36DC56B}",
+                      "scripts": [
+                        "jquery-3.4.1.min.js",
+                        "jquery.validate.min.js",
+                        "jquery.validate.unobtrusive.min.js",
+                        "jquery.unobtrusive-ajax.min.js",
+                        "form.init.js",
+                        "form.validate.js",
+                        "form.tracking.js",
+                        "form.conditions.js"
+                      ],
+                      "styles": [],
+                      "itemId": "82f8c68a-865a-488a-b33a-c39be0f7f7aa",
+                      "templateId": "{6ABEE1F2-4AB4-47F0-AD8B-BDB36F37F64C}",
+                      "fieldTypeItemId": "{3A4DF9C0-7C82-4415-90C3-25440257756D}",
+                      "name": "arbsubmit"
+                    },
+                    "fields": [
+                      {
+                        "fields": [
+                          {
+                            "model": {
+                              "text": "ARB Form",
+                              "htmlTag": "p",
+                              "conditionSettings": {
+                                "fieldKey": "D542D6E194284370B0FC2DE5A551E02A",
+                                "fieldConditions": []
+                              },
+                              "cssClassSettings": {
+                                "manualCssClasses": "",
+                                "cssClassOptions": [],
+                                "cssClass": ""
+                              },
+                              "cssClass": "",
+                              "itemId": "c65a8757-cf30-4bbc-94dd-9af74f618068",
+                              "name": "Texttest",
+                              "templateId": "{FC18F915-EAC6-460A-8777-6E1376A9EA09}",
+                              "fieldTypeItemId": "{983BFA5F-C6B6-4AEE-A3BB-46B95D52E7DF}"
+                            }
+                          },
+                          {
+                            "indexField": {
+                              "name": "fxb.742265fe-6164-45bb-8b21-20483f7b7676.Fields.Index",
+                              "id": "fxb_742265fe-6164-45bb-8b21-20483f7b7676_Fields_Index_d573d092-d22f-4ba3-bb76-e3c682dfb935",
+                              "value": "d573d092-d22f-4ba3-bb76-e3c682dfb935"
+                            },
+                            "fieldIdField": {
+                              "name": "fxb.742265fe-6164-45bb-8b21-20483f7b7676.Fields[d573d092-d22f-4ba3-bb76-e3c682dfb935].ItemId",
+                              "id": "fxb_742265fe-6164-45bb-8b21-20483f7b7676_Fields_d573d092-d22f-4ba3-bb76-e3c682dfb935__ItemId",
+                              "value": "d573d092-d22f-4ba3-bb76-e3c682dfb935"
+                            },
+                            "valueField": {
+                              "name": "fxb.742265fe-6164-45bb-8b21-20483f7b7676.Fields[d573d092-d22f-4ba3-bb76-e3c682dfb935].Value",
+                              "id": "fxb_742265fe-6164-45bb-8b21-20483f7b7676_Fields_d573d092-d22f-4ba3-bb76-e3c682dfb935__Value",
+                              "value": null
+                            },
+                            "model": {
+                              "minLength": 0,
+                              "maxLength": 255,
+                              "placeholderText": "",
+                              "value": "",
+                              "validationDataModels": [],
+                              "valueProviderSettings": {
+                                "valueProviderItemId": "",
+                                "parameters": ""
+                              },
+                              "isTrackingEnabled": true,
+                              "required": false,
+                              "allowSave": true,
+                              "title": "name",
+                              "labelCssClass": "",
+                              "labelCssClassSettings": {
+                                "manualCssClasses": "",
+                                "cssClassOptions": [],
+                                "cssClass": ""
+                              },
+                              "conditionSettings": {
+                                "fieldKey": "6508EA1EC10E4012B33EEB58245EA6B2",
+                                "fieldConditions": []
+                              },
+                              "cssClassSettings": {
+                                "manualCssClasses": "",
+                                "cssClassOptions": [],
+                                "cssClass": ""
+                              },
+                              "cssClass": "",
+                              "itemId": "d573d092-d22f-4ba3-bb76-e3c682dfb935",
+                              "name": "name",
+                              "templateId": "{0908030B-4564-42EA-A6FA-C7A5A2D921A8}",
+                              "fieldTypeItemId": "{4EE89EA7-CEFE-4C8E-8532-467EF64591FC}"
+                            }
+                          },
+                          {
+                            "indexField": {
+                              "name": "fxb.742265fe-6164-45bb-8b21-20483f7b7676.Fields.Index",
+                              "id": "fxb_742265fe-6164-45bb-8b21-20483f7b7676_Fields_Index_a5886c13-091f-4d7f-ae5a-7fb81ab33a23",
+                              "value": "a5886c13-091f-4d7f-ae5a-7fb81ab33a23"
+                            },
+                            "fieldIdField": {
+                              "name": "fxb.742265fe-6164-45bb-8b21-20483f7b7676.Fields[a5886c13-091f-4d7f-ae5a-7fb81ab33a23].ItemId",
+                              "id": "fxb_742265fe-6164-45bb-8b21-20483f7b7676_Fields_a5886c13-091f-4d7f-ae5a-7fb81ab33a23__ItemId",
+                              "value": "a5886c13-091f-4d7f-ae5a-7fb81ab33a23"
+                            },
+                            "valueField": {
+                              "name": "fxb.742265fe-6164-45bb-8b21-20483f7b7676.Fields[a5886c13-091f-4d7f-ae5a-7fb81ab33a23].Value",
+                              "id": "fxb_742265fe-6164-45bb-8b21-20483f7b7676_Fields_a5886c13-091f-4d7f-ae5a-7fb81ab33a23__Value",
+                              "value": null
+                            },
+                            "model": {
+                              "minLength": 0,
+                              "maxLength": 255,
+                              "placeholderText": "",
+                              "value": "",
+                              "validationDataModels": [],
+                              "valueProviderSettings": {
+                                "valueProviderItemId": "",
+                                "parameters": ""
+                              },
+                              "isTrackingEnabled": true,
+                              "required": false,
+                              "allowSave": true,
+                              "title": "phone",
+                              "labelCssClass": "",
+                              "labelCssClassSettings": {
+                                "manualCssClasses": "",
+                                "cssClassOptions": [],
+                                "cssClass": ""
+                              },
+                              "conditionSettings": {
+                                "fieldKey": "427AD4AF9E43472A9903873CC8F9B25B",
+                                "fieldConditions": []
+                              },
+                              "cssClassSettings": {
+                                "manualCssClasses": "",
+                                "cssClassOptions": [],
+                                "cssClass": ""
+                              },
+                              "cssClass": "",
+                              "itemId": "a5886c13-091f-4d7f-ae5a-7fb81ab33a23",
+                              "name": "phone",
+                              "templateId": "{0908030B-4564-42EA-A6FA-C7A5A2D921A8}",
+                              "fieldTypeItemId": "{4EE89EA7-CEFE-4C8E-8532-467EF64591FC}"
+                            }
+                          },
+                          {
+                            "indexField": {
+                              "name": "fxb.742265fe-6164-45bb-8b21-20483f7b7676.Fields.Index",
+                              "id": "fxb_742265fe-6164-45bb-8b21-20483f7b7676_Fields_Index_25a8a757-c12c-4e09-8d61-585e52923e24",
+                              "value": "25a8a757-c12c-4e09-8d61-585e52923e24"
+                            },
+                            "fieldIdField": {
+                              "name": "fxb.742265fe-6164-45bb-8b21-20483f7b7676.Fields[25a8a757-c12c-4e09-8d61-585e52923e24].ItemId",
+                              "id": "fxb_742265fe-6164-45bb-8b21-20483f7b7676_Fields_25a8a757-c12c-4e09-8d61-585e52923e24__ItemId",
+                              "value": "25a8a757-c12c-4e09-8d61-585e52923e24"
+                            },
+                            "valueField": {
+                              "name": "fxb.742265fe-6164-45bb-8b21-20483f7b7676.Fields[25a8a757-c12c-4e09-8d61-585e52923e24].Value",
+                              "id": "fxb_742265fe-6164-45bb-8b21-20483f7b7676_Fields_25a8a757-c12c-4e09-8d61-585e52923e24__Value",
+                              "value": null
+                            },
+                            "model": {
+                              "value": false,
+                              "validationDataModels": [],
+                              "valueProviderSettings": {
+                                "valueProviderItemId": "",
+                                "parameters": ""
+                              },
+                              "isTrackingEnabled": true,
+                              "required": false,
+                              "allowSave": true,
+                              "title": "Label",
+                              "labelCssClass": "",
+                              "labelCssClassSettings": {
+                                "manualCssClasses": "",
+                                "cssClassOptions": [],
+                                "cssClass": ""
+                              },
+                              "conditionSettings": {
+                                "fieldKey": "800EEB89528E4E44B20DCA68E00F3F94",
+                                "fieldConditions": [
+                                  {
+                                    "matchTypeId": "{365C94DA-C1CD-4783-A91D-0D17A16C7117}",
+                                    "conditions": [
+                                      {
+                                        "fieldId": "800EEB89528E4E44B20DCA68E00F3F94",
+                                        "operatorId": "{1D38B217-A2EE-4E7B-B6ED-13E751462FEB}",
+                                        "value": "true"
+                                      }
+                                    ],
+                                    "actions": [
+                                      {
+                                        "fieldId": "E990D92D447447EAA855DE80E66586B0",
+                                        "actionTypeId": "{7F58C8DD-D7C0-4FB7-BB44-8EC6B5E1C3D9}",
+                                        "value": null
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              "cssClassSettings": {
+                                "manualCssClasses": "",
+                                "cssClassOptions": [],
+                                "cssClass": ""
+                              },
+                              "cssClass": "",
+                              "itemId": "25a8a757-c12c-4e09-8d61-585e52923e24",
+                              "name": "Checkbox",
+                              "templateId": "{2F07293C-077F-456C-B715-FDB791ACB367}",
+                              "fieldTypeItemId": "{4DA85E8A-3B48-4BC6-9565-8C1F5F36DD1B}"
+                            }
+                          },
+                          {
+                            "indexField": {
+                              "name": "fxb.742265fe-6164-45bb-8b21-20483f7b7676.Fields.Index",
+                              "id": "fxb_742265fe-6164-45bb-8b21-20483f7b7676_Fields_Index_cb8f8712-6535-42e0-a937-ae4ab99c61e7",
+                              "value": "cb8f8712-6535-42e0-a937-ae4ab99c61e7"
+                            },
+                            "fieldIdField": {
+                              "name": "fxb.742265fe-6164-45bb-8b21-20483f7b7676.Fields[cb8f8712-6535-42e0-a937-ae4ab99c61e7].ItemId",
+                              "id": "fxb_742265fe-6164-45bb-8b21-20483f7b7676_Fields_cb8f8712-6535-42e0-a937-ae4ab99c61e7__ItemId",
+                              "value": "cb8f8712-6535-42e0-a937-ae4ab99c61e7"
+                            },
+                            "valueField": {
+                              "name": "fxb.742265fe-6164-45bb-8b21-20483f7b7676.Fields[cb8f8712-6535-42e0-a937-ae4ab99c61e7].Value",
+                              "id": "fxb_742265fe-6164-45bb-8b21-20483f7b7676_Fields_cb8f8712-6535-42e0-a937-ae4ab99c61e7__Value",
+                              "value": null
+                            },
+                            "model": {
+                              "minLength": 0,
+                              "maxLength": 255,
+                              "placeholderText": "",
+                              "value": "",
+                              "validationDataModels": [],
+                              "valueProviderSettings": {
+                                "valueProviderItemId": "",
+                                "parameters": ""
+                              },
+                              "isTrackingEnabled": true,
+                              "required": false,
+                              "allowSave": true,
+                              "title": "Label",
+                              "labelCssClass": "",
+                              "labelCssClassSettings": {
+                                "manualCssClasses": "",
+                                "cssClassOptions": [],
+                                "cssClass": ""
+                              },
+                              "conditionSettings": {
+                                "fieldKey": "0B7A2DE38DE241CCBB0914EE9DA24C1D",
+                                "fieldConditions": []
+                              },
+                              "cssClassSettings": {
+                                "manualCssClasses": "",
+                                "cssClassOptions": [],
+                                "cssClass": ""
+                              },
+                              "cssClass": "",
+                              "itemId": "cb8f8712-6535-42e0-a937-ae4ab99c61e7",
+                              "name": "Single-Line Text",
+                              "templateId": "{0908030B-4564-42EA-A6FA-C7A5A2D921A8}",
+                              "fieldTypeItemId": "{4EE89EA7-CEFE-4C8E-8532-467EF64591FC}"
+                            }
+                          }
+                        ],
+                        "model": {
+                          "conditionSettings": {
+                            "fieldKey": "5AB76900AD3B40C89DCD9B5BE02413E0",
+                            "fieldConditions": []
+                          },
+                          "cssClassSettings": {
+                            "manualCssClasses": "",
+                            "cssClassOptions": [],
+                            "cssClass": ""
+                          },
+                          "cssClass": "",
+                          "itemId": "439bb12e-df3c-4843-b202-0fdab3c6f467",
+                          "name": "Sectiontest",
+                          "templateId": "{8CDDB194-F456-4A75-89B7-346F8F39F95C}",
+                          "fieldTypeItemId": "{447AA745-6D29-4B65-A5A3-8173AA8AF548}"
+                        }
+                      },
+                      {
+                        "fields": [
+                          {
+                            "model": {
+                              "text": "submit section ",
+                              "htmlTag": "p",
+                              "conditionSettings": {
+                                "fieldKey": "388F74E3DC684BA68E2B6AF600BCFC43",
+                                "fieldConditions": []
+                              },
+                              "cssClassSettings": {
+                                "manualCssClasses": "",
+                                "cssClassOptions": [],
+                                "cssClass": ""
+                              },
+                              "cssClass": "",
+                              "itemId": "8baa3a3f-ce68-41c6-9953-5105c6dfded5",
+                              "name": "Text",
+                              "templateId": "{FC18F915-EAC6-460A-8777-6E1376A9EA09}",
+                              "fieldTypeItemId": "{983BFA5F-C6B6-4AEE-A3BB-46B95D52E7DF}"
+                            }
+                          },
+                          {
+                            "navigationButtonsField": {
+                              "name": "fxb.742265fe-6164-45bb-8b21-20483f7b7676.NavigationButtons",
+                              "id": null,
+                              "value": "b932d610-1c58-4f32-812f-887a20cec004"
+                            },
+                            "navigationStepField": {
+                              "name": "fxb.742265fe-6164-45bb-8b21-20483f7b7676.b932d610-1c58-4f32-812f-887a20cec004",
+                              "id": null,
+                              "value": "0"
+                            },
+                            "buttonField": {
+                              "name": "fxb.742265fe-6164-45bb-8b21-20483f7b7676.b932d610-1c58-4f32-812f-887a20cec004",
+                              "id": "fxb_742265fe-6164-45bb-8b21-20483f7b7676_b932d610-1c58-4f32-812f-887a20cec004",
+                              "value": "Submit Button"
+                            },
+                            "model": {
+                              "navigationStep": 0,
+                              "submitActions": [
+                                {
+                                  "itemId": "{10E89028-58CD-4562-9EEB-BA292DC5F4C5}",
+                                  "name": "Save Data",
+                                  "submitActionId": "{0C61EAB3-A61E-47B8-AE0B-B6EBA0D6EB1B}",
+                                  "parameters": "",
+                                  "description": ""
+                                },
+                                {
+                                  "itemId": "{15BAF5F2-1280-47F4-9576-BA82C3AEC41B}",
+                                  "name": "Redirect to Page",
+                                  "submitActionId": "{3F3E2093-9DEA-4199-86CA-44FC69EF624D}",
+                                  "parameters": "{\"referenceId\":\"{37351393-0E8C-4E85-8016-6EDDB0CC546A}\"}",
+                                  "description": "Home"
+                                }
+                              ],
+                              "title": "Text",
+                              "labelCssClass": "",
+                              "labelCssClassSettings": {
+                                "manualCssClasses": "",
+                                "cssClassOptions": [],
+                                "cssClass": ""
+                              },
+                              "conditionSettings": {
+                                "fieldKey": "E990D92D447447EAA855DE80E66586B0",
+                                "fieldConditions": []
+                              },
+                              "cssClassSettings": {
+                                "manualCssClasses": "",
+                                "cssClassOptions": [],
+                                "cssClass": ""
+                              },
+                              "cssClass": "",
+                              "itemId": "b932d610-1c58-4f32-812f-887a20cec004",
+                              "name": "Submit Button",
+                              "templateId": "{94A46D66-B1B8-405D-AAE4-7B5A9CD61C5E}",
+                              "fieldTypeItemId": "{7CE25CAB-EF3A-4F73-AB13-D33BDC1E4EE2}"
+                            }
+                          }
+                        ],
+                        "model": {
+                          "conditionSettings": {
+                            "fieldKey": "42C7288EB84E4CBAAB6CE8201A184EC5",
+                            "fieldConditions": []
+                          },
+                          "cssClassSettings": {
+                            "manualCssClasses": "",
+                            "cssClassOptions": [],
+                            "cssClass": ""
+                          },
+                          "cssClass": "",
+                          "itemId": "bbc18b9a-6665-473c-9e7c-738ecaf05b63",
+                          "name": "Section",
+                          "templateId": "{8CDDB194-F456-4A75-89B7-346F8F39F95C}",
+                          "fieldTypeItemId": "{447AA745-6D29-4B65-A5A3-8173AA8AF548}"
+                        }
+                      }
+                    ],
+                    "contextItemId": "bbaa4c63-231b-4cd3-92a9-71ef6ab66ff4"
+                  }
+                }
+              ],
+              "headless-footer": [
+                {
+                  "uid": "b65a7dbb-c8a4-4755-bd3b-649bde297d9d",
+                  "componentName": "PartialDesignDynamicPlaceholder",
+                  "dataSource": "",
+                  "params": {
+                    "sid": "{867351D9-7F1E-47D5-B1BD-314E22830AD8}",
+                    "ph": "headless-footer",
+                    "sig": "sxa-footer"
+                  },
+                  "placeholders": {
+                    "sxa-footer": [
+                      {
+                        "uid": "67274e0f-fd20-42d1-8528-c139a49569fa",
+                        "componentName": "Container",
+                        "dataSource": "",
+                        "params": {
+                          "Styles": "container-fluid",
+                          "DynamicPlaceholderId": "1",
+                          "FieldNames": "Default"
+                        },
+                        "placeholders": {
+                          "container-1": [
+                            {
+                              "uid": "97f073c6-7645-42b1-8bbb-df287fb763ba",
+                              "componentName": "Container",
+                              "dataSource": "",
+                              "params": {
+                                "Styles": "col-6",
+                                "CacheClearingBehavior": "Clear on publish",
+                                "DynamicPlaceholderId": "8",
+                                "FieldNames": "Default"
+                              },
+                              "placeholders": {
+                                "container-8": [
+                                  {
+                                    "uid": "757e3a5d-80f2-41d5-907a-4eef71634f90",
+                                    "componentName": "RichText",
+                                    "dataSource": "/sitecore/content/AlRajhi/ARBRevamp/Presentation/Partial Designs/Footer/Data/Address",
+                                    "params": {
+                                      "FieldNames": "Default",
+                                      "DynamicPlaceholderId": "6"
+                                    },
+                                    "fields": {
+                                      "Text": {
+                                        "value": "\u003cspan id=\"docs-internal-guid-17237c97-7fff-f61d-384b-b66bc74de880\"\u003e\u003c/span\u003e\n\u003cp\u003e\u003cspan\u003eSkate Park\u003c/span\u003e\u003c/p\u003e\n\u003cp\u003e\u003cspan\u003e12 Forever Street\u003c/span\u003e\u003c/p\u003e\n\u003cp\u003e\u003cspan\u003eA99 B44\u003c/span\u003e\u003c/p\u003e\n\u003cp\u003e\u003cspan\u003eThe Nation of Skate\u003c/span\u003e\u003c/p\u003e\n\u003cp\u003e\u003cspan\u003eMade by \u003ca href=\"https://www.sitecore.com/\"\u003eSitecore\u003c/a\u003e\u003c/span\u003e\u003c/p\u003e\n\u003cdiv\u003e\u003cspan\u003e\u003cbr /\u003e\u003c/span\u003e\u003c/div\u003e"
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "uid": "208ac59b-2ae9-49ac-831b-ab1afb6f12fc",
+                              "componentName": "Container",
+                              "dataSource": "",
+                              "params": {
+                                "Styles": "col-6",
+                                "CacheClearingBehavior": "Clear on publish",
+                                "DynamicPlaceholderId": "9",
+                                "FieldNames": "Default"
+                              },
+                              "placeholders": {
+                                "container-9": [
+                                  {
+                                    "uid": "2f78b3f0-bb7d-4e3c-8584-02d098f9ac11",
+                                    "componentName": "RichText",
+                                    "dataSource": "/sitecore/content/AlRajhi/ARBRevamp/Presentation/Partial Designs/Footer/Data/Contact info",
+                                    "params": {
+                                      "FieldNames": "Default",
+                                      "DynamicPlaceholderId": "7"
+                                    },
+                                    "fields": {
+                                      "Text": {
+                                        "value": "\u003cspan id=\"docs-internal-guid-7ad7f9d6-7fff-281f-d1e1-3575add84e48\"\u003e\u003c/span\u003e\n\u003cp\u003e\u003cspan\u003einfo@Skatepark.com\u003c/span\u003e\u003c/p\u003e\n\u003cp\u003e\u003cspan\u003e234-234-234-234\u003c/span\u003e\u003c/p\u003e\n\u003cdiv\u003e\u003cspan\u003e\u003cbr /\u003e\n\u003c/span\u003e\u003c/div\u003e"
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "dictionary": {},
+      "headLinks": [],
+      "componentProps": {}
+    },
+    "__N_SSP": true
+  },
+  "page": "/about/[[...slug]]",
+  "query": { "slug": ["forms", "form1"] },
+  "buildId": "development",
+  "assetPrefix": "http://localhost:3000",
+  "isFallback": false,
+  "gssp": true,
+  "locale": "en",
+  "locales": ["en"],
+  "defaultLocale": "en",
+  "scriptLoader": []
+}
