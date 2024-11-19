@@ -34,6 +34,7 @@ const useSitecoreFormConditions = (fields: any, functionConditions: any[]) => {
         }
       }
       if (field.fields && Array.isArray(field.fields)) {
+        console.log('Shayaaan look', fields.fields);
         processAllFields(field.fields, parentElement);
       }
     });
@@ -53,46 +54,101 @@ const useSitecoreFormConditions = (fields: any, functionConditions: any[]) => {
       if (ConditionItem && changingCondition) {
         console.log('Arraaaaaaaaaaaaaaaaaay', condition.conditions[0].value);
         const handleCondition = () => {
-          const isConditionTrue = Boolean(condition.conditions[0].value);
-          console.log('first checker for checkbox initial code render', isConditionTrue);
-          console.log(condition);
-          const variable =
-            condition.conditions[0].operator === 'IS_EQUAL_TO'
-              ? ConditionItem.checked === true
-              : ConditionItem.checked !== isConditionTrue;
-          console.log('flagvalue', variable);
-          // Example usage
-          if (variable && condition.actions[0]?.actionType) {
-            // Perform your logic when the variable is true
-            console.log('Condition met, perform the action:', condition.actions[0].actionType);
-            console.log(condition.actions[0]);
-            const actionType = condition.actions[0]?.actionType;
-            // const actionType = "DISABLE";
-            console.log('-----/////////', actionType);
-            switch (actionType) {
-              case 'HIDE':
-                changingCondition.style.display = 'none';
-                break;
-              case 'SHOW':
-                changingCondition.style.display = '';
-                break;
-              case 'DISABLE':
-                changingCondition.setAttribute('disabled', 'true');
-                break;
-              case 'ENABLE':
-                changingCondition.removeAttribute('disabled');
-                break;
-              default:
-                console.warn(`Unknown actionType: ${actionType}`);
+          const x = condition.conditions[0].value;
+          console.log('xxxxxxxxxxxxxxxxxx', x);
+          if (
+            condition.conditions[0].value !== true &&
+            condition.conditions[0].value !== false &&
+            condition.conditions[0].value !== 'true' &&
+            condition.conditions[0].value !== 'false'
+          ) {
+            console.log('change will be in a text field', condition);
+            const variable =
+              condition.conditions[0].operator === 'IS_EQUAL_TO'
+                ? ConditionItem.checked === true
+                : ConditionItem.checked !== isConditionTrue;
+            console.log('flagvalue', variable);
+            const matcherValues = condition.conditions[0].value;
+            console.log('textMatch', matcherValues);
+            console.log('textMatch', ConditionItem);
+            console.log('textMatch', changingCondition);
+            console.log('hany', ConditionItem.value);
+            // if (ConditionItem.value == matcherValues) {
+            //   console.log('hany2');
+            // }
+            // Example usage
+            if (ConditionItem.value == matcherValues) {
+              // Perform your logic when the variable is true
+              console.log('Condition met, perform the action:', condition.actions[0].actionType);
+              console.log(condition.actions[0]);
+              const actionType = condition.actions[0]?.actionType;
+              // const actionType = "DISABLE";
+              console.log('-----/////////', actionType);
+              switch (actionType) {
+                case 'HIDE':
+                  changingCondition.style.display = 'none';
+                  break;
+                case 'SHOW':
+                  changingCondition.style.display = '';
+                  break;
+                case 'DISABLE':
+                  changingCondition.setAttribute('disabled', 'true');
+                  break;
+                case 'ENABLE':
+                  changingCondition.removeAttribute('disabled');
+                  break;
+                default:
+                  console.warn(`Unknown actionType: ${actionType}`);
+              }
+            } else {
+              changingCondition.style.display = '';
+              changingCondition.removeAttribute('disabled');
             }
           } else {
-            changingCondition.style.display = '';
-            changingCondition.removeAttribute('disabled');
+            const isConditionTrue = Boolean(condition.conditions[0].value);
+            console.log('first checker for checkbox initial code render', isConditionTrue);
+            console.log(condition);
+            const variable =
+              condition.conditions[0].operator === 'IS_EQUAL_TO'
+                ? ConditionItem.checked === true
+                : ConditionItem.checked !== isConditionTrue;
+            console.log('flagvalue', variable);
+            // Example usage
+            if (variable && condition.actions[0]?.actionType) {
+              // Perform your logic when the variable is true
+              console.log('Condition met, perform the action:', condition.actions[0].actionType);
+              console.log(condition.actions[0]);
+              const actionType = condition.actions[0]?.actionType;
+              // const actionType = "DISABLE";
+              console.log('-----/////////', actionType);
+              switch (actionType) {
+                case 'HIDE':
+                  changingCondition.style.display = 'none';
+                  break;
+                case 'SHOW':
+                  changingCondition.style.display = '';
+                  break;
+                case 'DISABLE':
+                  changingCondition.setAttribute('disabled', 'true');
+                  break;
+                case 'ENABLE':
+                  changingCondition.removeAttribute('disabled');
+                  break;
+                default:
+                  console.warn(`Unknown actionType: ${actionType}`);
+              }
+            } else {
+              changingCondition.style.display = '';
+              changingCondition.removeAttribute('disabled');
+            }
           }
         };
 
-        ConditionItem.addEventListener('change', handleCondition);
-        handleCondition();
+        if (ConditionItem.type === 'text') {
+          ConditionItem.addEventListener('input', handleCondition);
+        } else {
+          ConditionItem.addEventListener('change', handleCondition);
+        }
       }
     });
   };
@@ -105,7 +161,7 @@ const useSitecoreFormConditions = (fields: any, functionConditions: any[]) => {
       }
     }
     setIsInitialProcessingDone(true);
-  }, [fields]);
+  }, []);
 
   useEffect(() => {
     if (isInitialProcessingDone && wrapperRef.current) {
